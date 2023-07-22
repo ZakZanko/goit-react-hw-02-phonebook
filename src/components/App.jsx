@@ -35,7 +35,7 @@ class App extends Component {
       alert(`${number} is already in contacts.`);
     } else if (name.trim() === '' || number.trim() === '') {
       alert("Enter the contact's name and number phone!");
-    } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(number)) {
+    } else if (!/^(\+38)?0[0-9]{9}$/g.test(number)) {
       alert('Enter the correct number phone!');
     } else {
       this.setState(({ contacts }) => ({
